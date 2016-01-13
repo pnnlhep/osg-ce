@@ -1,10 +1,9 @@
 #!/bin/bash -e
 
-gums-host-cron
-/sbin/service gums-client-cron start
+# Setup GRAM
 /sbin/service globus-gatekeeper start
-/sbin/service globus-gridftp-server start
 
+# Setup CONDOR client
 . /etc/sysconfig/condor
 condor_master -f 
 
